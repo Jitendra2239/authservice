@@ -63,6 +63,12 @@ public class AuthController {
 public String hello(){
         return "Hello World";
 }
+    @GetMapping("/validate")
+    public boolean validate(@RequestParam("token") String token) {
+        System.out.println("Here I am");
+//        return false;
+        return authService.validate(token);
+    }
 
 
 }
